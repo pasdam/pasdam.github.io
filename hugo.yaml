@@ -11,7 +11,18 @@ menus:
     pageRef: /blog/posts
     weight: 20
   - name: GitHub
+    params:
+      target: _blank
+      iconClass: fa-brands fa-github
+      iconOnly: true
     url: https://github.com/pasdam
+    weight: 30
+  - name: LinkedIn
+    params:
+      target: _blank
+      iconClass: fa-brands fa-linkedin
+      iconOnly: true
+    url: https://www.linkedin.com/in/pasdam
     weight: 30
 minify:
   minifyOutput: true

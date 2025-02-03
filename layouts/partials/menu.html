@@ -18,6 +18,9 @@
 {{- else if $page.HasMenuCurrent .Menu .}}
 {{- $attrs = merge $attrs (dict "class" "ancestor" "aria-current" "true") }}
 {{- end }}
+{{- if .Params.target }}
+{{- $attrs = merge $attrs (dict "target" .Params.target) }}
+{{- end }}
 {{- $name := .Name }}
 {{- with .Identifier }}
 {{- with T . }}
@@ -26,7 +29,14 @@
 {{- end }}
 <li>
   <a {{- range $k, $v :=$attrs }} {{- with $v }} {{- printf " %s=%q" $k $v | safeHTMLAttr }} {{- end }} {{- end -}}>
-    {{ $name }}
+    {{ .Pre }}
+    {{- with .Params.iconClass }}
+    <i class="{{ . }}"></i>
+    {{- end }}
+    {{- if not .Params.iconOnly }}
+    <span>{{ $name }}</span>
+    {{- end }}
+    {{ .Post }}
   </a>
   {{- with .Children }}
   <ul>
