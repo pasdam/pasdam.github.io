@@ -2,7 +2,9 @@
   <nav>
     <div class="logo-container">
       <h1 class="logo">
-        {{ .Site.Title }}{{ with .Page.Section }} - {{ title . }}{{ end }}
+        <a href="{{ "" | relURL }}">
+          {{ .Site.Title }}{{ with .Page.Section }} - {{ title . }}{{ end }}
+        </a>
       </h1>
     </div>
     <script>
