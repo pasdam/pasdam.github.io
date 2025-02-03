@@ -1,0 +1,19 @@
+{{ define "main" }}
+<main id="main">
+  <div>
+    <h1 id="title"><a href="{{ "" | relURL }}">404 - Page not found</a></h1>
+
+    <p>Someone might have broken something by running <code id="cmd"></code>.</p>
+
+    <p>If you think this was an error, please file an <a href="https://github.com/pasdam/pasdam.github.io/issues"
+        target="_blank">issue</a>, otherwise feel free to go to the <a href="{{ "" | relURL }}">home
+      </a> and explore all the content.</p>
+  </div>
+
+  <p id="demo"></p>
+
+  <script>
+    document.getElementById("cmd").innerHTML = "rm -rf " + window.location.pathname;
+  </script>
+</main>
+{{ end }}
