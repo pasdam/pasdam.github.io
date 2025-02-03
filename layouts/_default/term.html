@@ -1,0 +1,6 @@
+{{ define "main" }}
+{{ partial "breadcrumbs.html" . }}
+<h1>{{ .Pages.Len }} {{ if eq 1 .Pages.Len }}page{{ else }}pages{{ end }} matching "{{ .Title }}"</h1>
+{{ .Content }}
+{{ partial "posts-list.html" . }}
+{{ end }}

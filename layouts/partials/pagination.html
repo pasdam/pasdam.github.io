@@ -1,0 +1,82 @@
+{{- with .Paginator }}
+{{- $currentPageNumber := .PageNumber }}
+<div class="pagination">
+  <div>
+    {{- with .First }}{{- if ne $currentPageNumber .PageNumber }}
+    <a href="{{ .URL }}" aria-label="First" role="button" class="button">
+      <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.1665 4H12.8332" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"
+          stroke-linejoin="round" />
+        <path d="M1.1665 4L4.49984 7.33333" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"
+          stroke-linejoin="round" />
+        <path d="M1.1665 4.00002L4.49984 0.666687" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+      <span class="left-label">First</span>
+    </a>
+    {{- end }}{{- end }}
+  </div>
+  <div>
+    {{- with .Prev }}
+    <a href="{{ .URL }}" aria-label="Previous" role="button" class="button">
+      <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.1665 4H12.8332" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"
+          stroke-linejoin="round" />
+        <path d="M1.1665 4L4.49984 7.33333" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"
+          stroke-linejoin="round" />
+        <path d="M1.1665 4.00002L4.49984 0.666687" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+      <span class="left-label">Previous</span>
+    </a>
+    {{- end }}
+  </div>
+  <div class="pages">
+    {{- $slots := 5 }}
+    {{- $start := math.Max 1 (sub .PageNumber (math.Floor (div $slots 2))) }}
+    {{- $end := math.Min .TotalPages (sub (add $start $slots) 1) }}
+    {{- if lt (add (sub $end $start) 1) $slots }}
+    {{- $start = math.Max 1 (add (sub $end $slots) 1) }}
+    {{- end }}
+
+    {{- range $k := seq $start $end }}
+    {{- if eq $.Paginator.PageNumber $k }}
+    <a class="number current" aria-current="page" aria-label="Page {{ $k }}" role="button">{{ $k }}</a>
+    {{- else }}
+    <a class="number" href="{{ (index $.Paginator.Pagers (sub $k 1)).URL }}" aria-label="Page {{ $k }}" role="button">{{
+      $k }}</a>
+    {{- end }}
+    {{- end }}
+  </div>
+  <div>
+    {{- with .Next }}
+    <a href="{{ .URL }}" aria-label="Next" role="button" class="button">
+      <span class="right-label">Next</span>
+      <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.1665 4H12.8332" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"
+          stroke-linejoin="round" />
+        <path d="M9.5 7.33333L12.8333 4" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"
+          stroke-linejoin="round" />
+        <path d="M9.5 0.666687L12.8333 4.00002" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+    </a>
+    {{- end }}
+  </div>
+  <div>
+    {{- with .Last }}{{- if ne $currentPageNumber .PageNumber }}
+    <a href="{{ .URL }}" aria-label="Last" role="button" class="button">
+      <span class="right-label">Last</span>
+      <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.1665 4H12.8332" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"
+          stroke-linejoin="round" />
+        <path d="M9.5 7.33333L12.8333 4" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"
+          stroke-linejoin="round" />
+        <path d="M9.5 0.666687L12.8333 4.00002" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+    </a>
+    {{- end }}{{- end }}
+  </div>
+</div>
+{{- end }}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language }}">
+
+<head>
+  <meta charset="utf-8">
+  <title>
+    {{ block "title" . }}{{ if not (eq .Title .Site.Title) }}{{ .Title }} &ndash; {{ end }}{{ .Site.Title }}{{ end }}
+  </title>
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:600|Quattrocento+Sans:400,400i,700" rel="stylesheet"
+    type="text/css">
+  <link rel="icon" href="{{.Site.BaseURL}}favicon.svg">
+  {{- $css := resources.Match "*.css" | resources.Concat "global.css" | minify }}
+  <link rel="stylesheet" href="{{ $css.Permalink }}">
+  <meta name="description"
+    content="{{ if .Params.summary }}{{ .Params.summary }}{{ else }}{{ .Site.Params.Description }}{{ end }}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script async
+    src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Config.Services.GoogleAnalytics.ID }}"></script>
+  {{ if (findRE "<pre" .Content 1) }}
+  {{- $js := resources.Match "copy-code-button.js" | resources.Concat "copy-code-button.js" | minify }}
+  <script async src="{{ $js.Permalink }}" onload="setupCopyButtons('{{- i18n "code_copy" | default "copy" }}', '{{- i18n "code_copied" | default "copied!" }}');"></script>
+  {{ end }}
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', '{{ .Site.Config.Services.GoogleAnalytics.ID }}', {
+      {{- $url := urls.Parse .Site.BaseURL }}
+      cookie_domain: '{{ $url.Hostname }}',
+      cookie_flags: 'SameSite=None;Secure',
+    });
+  </script>
+  {{ with .OutputFormats.Get "rss" -}}
+  {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
+  {{ end }}
+  {{ block "headers" . }}{{ end }}
+</head>
+
+<body>
+  {{ partial "header.html" . }}
+  <!-- Code that all your templates share, like a header -->
+  <div id="main">
+    {{ block "main" . }}
+    <!-- The part of the page that begins to differ between templates -->
+    {{ end }}
+    {{ block "footer" . }}
+  </div>
+  <!-- More shared code, perhaps a footer but that can be overridden if need be in  -->
+  {{ end }}
+  {{ partial "scroll-to-top.html" . }}
+</body>
+
+</html>

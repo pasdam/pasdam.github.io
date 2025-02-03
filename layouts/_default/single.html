@@ -1,0 +1,36 @@
+{{ define "headers" }}
+<link href="https://cdn.jsdelivr.net/npm/shareon@2/dist/shareon.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/shareon@2/dist/shareon.iife.js" defer init></script>
+{{ end }}
+
+{{ define "main" }}
+<article class="post-body">
+  <h1 class="text-green">{{ .Title }}</h1>
+  {{ partial "date-and-time-to-read.html" . }}
+  {{ with .GetTerms "tags" }}
+  <div class="tags">
+    {{- range . }}
+    <div class="tag">
+      <a href="{{ .RelPermalink }}" class="test">{{ .LinkTitle }}</a>
+    </div>
+    {{- end }}
+  </div>
+  {{- end }}
+  {{ if (and (ne .TableOfContents "<nav id=\"TableOfContents\"></nav>") (ne .TableOfContents "")) }}
+  <hr />
+  {{ .TableOfContents }}
+  {{- end }}
+  <hr />
+  <div class="content">
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}
+{{ define "footer" }}
+<hr />
+{{ partial "related.html" . }}
+<hr />
+{{ partial "socialshare.html" . }}
+<hr />
+{{ template "_internal/disqus.html" . }}
+{{ end }}

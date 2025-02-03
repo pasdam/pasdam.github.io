@@ -1,0 +1,71 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><title>Why I migrated my personal blog from GatsbyJS to Hugo &ndash; /dev/null
+</title><link href="https://fonts.googleapis.com/css?family=Work+Sans:600|Quattrocento+Sans:400,400i,700" rel=stylesheet type=text/css><link rel=icon href=https://pasdam.github.io/favicon.svg><link rel=stylesheet href=https://pasdam.github.io/global.min.css><meta name=description content="Personal blog, which mainly contains tutorial on how to perform specific development tasks"><meta name=viewport content="width=device-width,initial-scale=1"><script async src="https://www.googletagmanager.com/gtag/js?id=G-H52BY7123V"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-H52BY7123V",{cookie_domain:"pasdam.github.io",cookie_flags:"SameSite=None;Secure"})</script><link href=https://cdn.jsdelivr.net/npm/shareon@2/dist/shareon.min.css rel=stylesheet><script src=https://cdn.jsdelivr.net/npm/shareon@2/dist/shareon.iife.js defer init></script></head><body><header id=page-header class=bg-green><nav><div class=logo-container><h1 class=logo>/dev/null - Blog</h1></div><script>function toggleClassNameById(e,t){const n=document.getElementById(e).classList;n.contains(t)?n.remove(t):n.add(t)}</script><button data-collapse-toggle=mega-menu type=button class=mega-menu-toggle aria-controls=mega-menu aria-expanded=false onclick='toggleClassNameById("mega-menu","hidden")'>
+<span class=sr-only>Open main menu</span><svg class="icon" aria-hidden="true" fill="none" viewBox="0 0 17 14"><path stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/></svg></button><div id=mega-menu><ul><li><a href=/>Home</a></li><li><a aria-current=true class=ancestor href=/blog/posts/>Blog</a></li><li><a href=https://github.com/pasdam>GitHub</a></li></ul></div></nav></header><div id=main><article class=post-body><h1 class=text-green>Why I migrated my personal blog from GatsbyJS to Hugo</h1><p class=date-read-time>August 26, 2024 &mdash; 6 Min Read</p><div class=tags><div class=tag><a href=/tags/blog/ class=test>Blog</a></div><div class=tag><a href=/tags/gatsbyjs/ class=test>GatsbyJS</a></div><div class=tag><a href=/tags/hugo/ class=test>Hugo</a></div></div><hr><nav id=TableOfContents><ul><li><a href=#a-love-hate-relationship-with-gatsbyjs>A love-hate relationship with GatsbyJS</a></li><li><a href=#choosing-an-alternative>Choosing an alternative</a></li><li><a href=#the-development-experience-with-hugo-so-far>The development experience with Hugo so far</a></li><li><a href=#improvements-in-the-current-blog-version>Improvements in the current blog version</a></li><li><a href=#conclusions>Conclusions</a></li></ul></nav><hr><div class=content><p>Over the years my personal blog went through different iterations, using
+different stacks. When I started using <a href=https://www.gatsbyjs.com/>GatsbyJS</a> I
+thought that would have been my last stack as I was initially very happy with
+it: <a href=https://react.dev/>React</a> is a very good and easy to use library to
+develop frontends, the Gatsby community is big, and there are plenty of
+resources or example about implementing common frontend features.</p><p>Unfortunately through the years I faced quite some challenges in maintaining the
+blog, given that the amount of time I was willing to spend on it was very
+limited and the (relatively) big effort required to keep the framework updated.</p><p>This is the journey that brought me to ditch GatsbyJS in favour of
+<a href=https://gohugo.io/>Hugo</a>.</p><h2 id=a-love-hate-relationship-with-gatsbyjs>A love-hate relationship with GatsbyJS</h2><p>Surprisingly, with Gatsby it was love at first sight. I initially thought it was
+a great way of creating a static website, such as the blog I wanted to develop:
+coming from other ecosystems, having a more organized development for
+HTML/JS/CSS components compared to the vanilla one was a breath of fresh air,
+and more in line with what I was used to.</p><p>The first few months it was all good, once developed the main structure of the
+blog, adding content was super easy, the deployment was fast and the
+performances of the website were good.</p><p>The <strong>problems</strong> started to arise like a year after the initial release of the
+blog, when I decided to bump the version of the framework: I naively thought it
+would be just a matter of downloading the latest one, update all the
+dependencies, maybe update 1 or 2 things in the code and then I could go back on
+doing what actually mattered, posting content. <strong>Boy I was wrong!</strong></p><p>First of all there were a number of breaking changes in the framework itself,
+which to a certain degree are to be expected, but these basically required me to
+rewrite big chunks of the code to adapt it to the latest framework version.</p><p>In addition to that, updating all the other dependencies, and finding the
+right compatible versions with one another, while at the same time addressing
+most of the NPM warnings, was challenging to say the least: I couldn&rsquo;t directly
+upgrade everything to the latest version as they were incompatible with each
+other.</p><p>Lastly, I didn&rsquo;t like the fact that to show a simple blog the browser has to
+load a bunch of javascript files.</p><p>I regularly stumbled into these issues once or twice a year, any time there was
+some major update to perform, to the point that for long time I just let the
+blog go, as I didn&rsquo;t want to spend energies into fixing it. Recently though, I
+got lucky to have had some spare time, so I decided to finally get back to it.</p><h2 id=choosing-an-alternative>Choosing an alternative</h2><p>Now I was faced with a choice: fixing the code once again to adapt it to the
+latest Gatsby version or replace the framework altogether. Given the all the
+issues described above this was an easy decision, but I was now left with
+another hurdle: picking up an alternative.</p><p>After evaluating different tools, I chose to go with Hugo because of the
+following reasons:</p><ol><li>it&rsquo;s one of the most popular static site generator, and as such it has
+big community and plenty of tutorials for each use case;</li><li>the architecture it&rsquo;s relatively simple, no JS framework is required;</li><li>content is created using markdown, a very clean and easy format;</li><li>pages are rendered using the powerful Go templates;</li><li>supposedly it has a very fast build time.</li></ol><p>I reckon at least some of these points might be subjective and not valid for
+everyone and every use case.</p><h2 id=the-development-experience-with-hugo-so-far>The development experience with Hugo so far</h2><p>To be fair the first development experience is not better than GatsbyJS, but I&rsquo;m
+surprised by how easy it was to setup the whole project and replicate the
+exact same Gatsby blog with Hugo.</p><p>Adding features like comments, pagination, summaries, and so on was as easy as
+do a web search with <code>hugo &lt;feature-name></code> to get either some official
+documentation or some some other post about it, luckily there&rsquo;s plenty of
+useful material out there.</p><p>The only learning curve I faced was about understanding how Hugo
+<a href=https://gohugo.io/templates/lookup-order/>overrides templates</a>, which
+basically allows to define generic templates and specific ones for different
+cases and content types: let&rsquo;s assume you have 2 content types, blog posts and
+projects you worked on, you can define a generic template to use as a default to
+render a single entry in each type, but you can also define specific ones in
+case for instance your blog posts require some customization.</p><p>Another annoyance I found is that with Gatsby I could use
+<a href=https://github.com/css-modules/css-modules>CSS modules</a> so my style sheets
+were nicely organized, with each component having his own CSS. I haven&rsquo;t found
+yet an alternative in Hugo, but admittedly I haven&rsquo;t look deep into it enough.</p><h2 id=improvements-in-the-current-blog-version>Improvements in the current blog version</h2><p>Comparing the posts list load for both stacks:</p><table><thead><tr><th>Stack</th><th># requests</th><th>size (Kb)</th></tr></thead><tbody><tr><td>GatsbyJS</td><td>19</td><td>467</td></tr><tr><td>Hugo</td><td>3</td><td>17</td></tr></tbody></table><p>you can see that the number of HTTP requests to retrieve all the resources went
+from 19 (which is crazy) to a more reasonable 3, 1 for the HTML, 1 for the CSS
+and 1 for the favicon, no JS garbage is loaded anymore. A reduction of <strong>84%</strong>.
+This of course affected also the total size of the data downloaded, which went
+from 467 Kb to 17 Kb, or <strong>-96%</strong>.</p><p>For big enough web site such a difference could become noticeable by users and
+improve the whole experience.</p><h2 id=conclusions>Conclusions</h2><p>This journey from GatsbyJS to Hugo highlights the importance of evaluating a
+technology&rsquo;s long-term maintainability and performance. While GatsbyJS provided
+a good initial experience, the challenges faced in maintaining and updating the
+blog over time outweighed its benefits.</p><p>Hugo, on the other hand, proved to be a more suitable choice for my needs,
+offering a faster and more efficient experience. The simplicity of its
+architecture, strong community support, and focus on performance gave me enough
+confidence in the choice made, although admittedly it&rsquo;s still early to draw
+definitive conclusions about that.</p><p>Key takeaways for others considering similar migrations:</p><ul><li>evaluate long-term maintenance: consider the potential challenges of
+maintaining a technology over time, especially if you have limited resources;</li><li>consider performances: if website performance is a crucial factor, Hugo&rsquo;s
+speed and efficiency might be a compelling reason to switch;</li><li>weigh the pros and cons of different technologies, based on your specific
+needs and goals.</li></ul><p>By considering these factors, you can make an informed decision about the best
+stack for your project and avoid potential pitfalls in the long run.</p></div></article><hr><div class=related><h3>See Also:</h3><ul><li><a href=/blog/posts/gatsbyjs_add_diqus_comments/>Add Disqus comments to a GatsbyJS static blog</a></li></ul></div><hr><div class=socialshare><p>Share this</p><div class=shareon><a class=facebook title="Share on Facebook"></a><a class=linkedin title="Share on Linkedin"></a><a class=mastodon title="Share on Mastodon"></a><a class=messenger data-fb-app-id=0123456789012345 title="Share on Messenger"></a><a class=pinterest title="Share on Pinterest"></a><a class=pocket title="Share on Pocket"></a><a class=reddit title="Share on Reddit"></a><a class=telegram title="Share on Telegram"></a><a class=twitter title="Share on Twitter"></a><a class=vkontakte title="Share on Vkontakte"></a><a class=whatsapp title="Share on Whatsapp"></a><a class=copy-url title="Copy link"></a><a class=email title="Share by Email"></a><a class=print title=Print></a></div></div><hr><div id=disqus_thread></div><script>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//pasdam-github-io.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
+<button class=hidden id=to-top-button onclick=goToTop() title="Go To Top">
+<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-circle-up" role="img" viewBox="0 0 512 512"><path fill="currentcolor" d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm231-113.9L103.5 277.6c-9.4 9.4-9.4 24.6.0 33.9l17 17c9.4 9.4 24.6 9.4 33.9.0L256 226.9l101.6 101.6c9.4 9.4 24.6 9.4 33.9.0l17-17c9.4-9.4 9.4-24.6.0-33.9L273 142.1c-9.4-9.4-24.6-9.4-34 0z"/></svg>
+</button>
+<script async>const offset=100;var toTopButton=document.getElementById("to-top-button");window.onscroll=function(){document.body.scrollTop>offset||document.documentElement.scrollTop>offset?toTopButton.classList.remove("hidden"):toTopButton.classList.add("hidden")};function goToTop(){window.scrollTo({top:0,behavior:"smooth"})}</script></body></html>

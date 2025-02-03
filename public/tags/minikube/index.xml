@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Minikube on /dev/null</title><link>https://pasdam.github.io/tags/minikube/</link><description>Recent content in Minikube on /dev/null</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 21 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://pasdam.github.io/tags/minikube/index.xml" rel="self" type="application/rss+xml"/><item><title>Deploy OpenFaas to minikube</title><link>https://pasdam.github.io/blog/posts/deploy_openfaas_to_minikube/</link><pubDate>Thu, 21 May 2020 00:00:00 +0000</pubDate><guid>https://pasdam.github.io/blog/posts/deploy_openfaas_to_minikube/</guid><description>&lt;p>&lt;a href="https://www.openfaas.com/">OpenFaas&lt;/a> is an open source
+&lt;a href="https://en.wikipedia.org/wiki/Function_as_a_service">FaaS&lt;/a> platform that
+allows to deploy event-driven functions and microservices to Kubernetes quickly.&lt;/p>
+&lt;p>In this tutorial we will see how to deploy it. In particular we will use
+&lt;a href="https://github.com/kubernetes/minikube">minikube&lt;/a>, which implements a simple
+local k8s cluster.&lt;/p></description></item></channel></rss>

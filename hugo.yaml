@@ -1,0 +1,27 @@
+baseURL: https://pasdam.github.io
+cleanDestinationDir: true
+enableRobotsTXT: true
+languageCode: en-us
+menus:
+  main:
+  - name: Home
+    pageRef: /
+    weight: 10
+  - name: Blog
+    pageRef: /blog/posts
+    weight: 20
+  - name: GitHub
+    url: https://github.com/pasdam
+    weight: 30
+minify:
+  minifyOutput: true
+params:
+  description: Personal blog, which mainly contains tutorial on how to perform specific development tasks
+services:
+  disqus:
+    shortname: pasdam-github-io
+  googleAnalytics:
+    id: G-H52BY7123V
+taxonomies:
+  tag: tags
+title: /dev/null

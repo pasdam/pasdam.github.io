@@ -1,0 +1,8 @@
+{{ define "main" }}
+<h1>{{ .Page.Title }}</h1>
+<ul>
+  {{ range $term, $weightedPages := .Data.Terms }}
+  <li><a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }} ({{ .Count }})</a></li>
+  {{ end }}
+</ul>
+{{ end }}

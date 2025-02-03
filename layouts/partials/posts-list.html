@@ -1,0 +1,17 @@
+<div>
+  {{ range .Paginator.Pages }}
+  <article class="post">
+    <h2>
+      <span class="first-letter">{{ substr .LinkTitle 0 1 }}</span>
+      <a href="{{ .RelPermalink }}" class="title">{{ .LinkTitle }}</a>
+    </h2>
+    {{ partial "date-and-time-to-read.html" . }}
+    <div class="summary">
+      {{ .Summary }}
+    </div>
+    <hr />
+  </article>
+  {{ end }}
+
+  {{ partial "pagination.html" . }}
+</div>
