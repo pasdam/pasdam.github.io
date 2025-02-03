@@ -152,8 +152,9 @@ You can start the services as per usual with:
 docker compose up -d
 ```
 
-Then you can open your web browser and go to http://localhost:3000 and ask
-questions to your personal assistant.
+Then you can open your web browser and go to
+[http://localhost:3000](http://localhost:3000) and ask questions to your
+personal assistant.
 
 Note that depending on the hardware and the chosen model, it might take some
 time to provide an answer, so be patient ;).
