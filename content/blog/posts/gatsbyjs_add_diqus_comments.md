@@ -73,7 +73,7 @@ class Article extends React.Component {
 
 The `disqusShortname` is the value that we got in the previous section when adding the website to [Disqus](https://disqus.com).
 
-To see the few changes I made to this blog to add the comments section just refer to the commit [6186e53]([to.do](https://github.com/pasdam/dev.pasdam.github.io/commit/6186e53a81e75fefea17ac269d2d00fee34237d3)).
+To see the few changes I made to this blog to add the comments section just refer to the commit [6186e53](https://github.com/pasdam/dev.pasdam.github.io/commit/6186e53a81e75fefea17ac269d2d00fee34237d3).
 
 ---
 

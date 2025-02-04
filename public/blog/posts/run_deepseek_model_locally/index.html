@@ -1,27 +1,27 @@
 <!doctype html><html lang=en><head><meta charset=utf-8><title>Run your own private AI assistant locally with Chat-UI and Deepseek on Docker &ndash; /dev/null
 </title><link href="https://fonts.googleapis.com/css?family=Work+Sans:600|Quattrocento+Sans:400,400i,700" rel=stylesheet type=text/css><link rel=icon href=https://pasdam.github.io/favicon.svg><link rel=stylesheet href=https://pasdam.github.io/global.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin=anonymous referrerpolicy=no-referrer><meta name=description content="Guide on how to spin up ChatUI, using Deepseek model from Ollama library, on docker"><meta name=viewport content="width=device-width,initial-scale=1"><script async src="https://www.googletagmanager.com/gtag/js?id=G-H52BY7123V"></script><script async src=https://pasdam.github.io/copy-code-button.min.js onload='setupCopyButtons("copy","copied!")'></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-H52BY7123V",{cookie_domain:"pasdam.github.io",cookie_flags:"SameSite=None;Secure"})</script><link href=https://cdn.jsdelivr.net/npm/shareon@2/dist/shareon.min.css rel=stylesheet><script src=https://cdn.jsdelivr.net/npm/shareon@2/dist/shareon.iife.js defer init></script></head><body><header id=page-header class=bg-green><nav><div class=logo-container><h1 class=logo><a href=/>/dev/null - Blog</a></h1></div><script>function toggleClassNameById(e,t){const n=document.getElementById(e).classList;n.contains(t)?n.remove(t):n.add(t)}</script><button data-collapse-toggle=mega-menu type=button class=mega-menu-toggle aria-controls=mega-menu aria-expanded=false onclick='toggleClassNameById("mega-menu","hidden")'>
 <span class=sr-only>Open main menu</span><svg class="icon" aria-hidden="true" fill="none" viewBox="0 0 17 14"><path stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/></svg></button><div id=mega-menu><ul><li><a href=/><span>Home</span></a></li><li><a aria-current=true class=ancestor href=/blog/posts/><span>Blog</span></a></li><li><a href=https://github.com/pasdam target=_blank><i class="fa-brands fa-github"></i></a></li><li><a href=https://www.linkedin.com/in/pasdam target=_blank><i class="fa-brands fa-linkedin"></i></a></li></ul></div></nav></header><div id=main><article class=post-body><h1 class=text-green>Run your own private AI assistant locally with Chat-UI and Deepseek on Docker</h1><p class=date-read-time>February 1, 2025 &mdash; 4 Min Read</p><div class=tags><div class=tag><a href=/tags/ai/ class=test>AI</a></div><div class=tag><a href=/tags/chatui/ class=test>ChatUI</a></div><div class=tag><a href=/tags/deepseek/ class=test>Deepseek</a></div><div class=tag><a href=/tags/docker/ class=test>Docker</a></div><div class=tag><a href=/tags/llm/ class=test>LLM</a></div><div class=tag><a href=/tags/ollama/ class=test>Ollama</a></div><div class=tag><a href=/tags/tutorial/ class=test>Tutorial</a></div></div><hr><nav id=TableOfContents><ul><li><a href=#tldr>TLDR</a></li><li><a href=#why-run-deepseek-locally>Why Run DeepSeek Locally?</a></li><li><a href=#prerequisites>Prerequisites</a></li><li><a href=#limitations>Limitations</a></li><li><a href=#code>Code</a></li><li><a href=#access-chat-ui>Access Chat-UI</a></li><li><a href=#conclusion>Conclusion</a></li></ul></nav><hr><div class=content><p>Want to harness the power of
-<a href=https://ollama.com/library/deepseek-r1:1.5b>Deepseek</a> LLM without relying on
+<a href=https://ollama.com/library/deepseek-r1:1.5b rel=external target=_blank>Deepseek</a> LLM without relying on
 external APIs or worrying about data privacy? Running it locally is the answer!
 This guide will walk you through setting up all you need on your own machine
-using the user-friendly <a href=https://github.com/huggingface/chat-ui>Chat UI</a> and
+using the user-friendly <a href=https://github.com/huggingface/chat-ui rel=external target=_blank>Chat UI</a> and
 the containerization magic of Docker. Get ready to chat with your very own
-private AI assistant!</p><h2 id=tldr>TLDR</h2><p>Check out my <a href=https://github.com/pasdam/docker-ollama-deepseek-chatui>repo</a> and
+private AI assistant!</p><h2 id=tldr>TLDR</h2><p>Check out my <a href=https://github.com/pasdam/docker-ollama-deepseek-chatui rel=external target=_blank>repo</a> and
 then run:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>make compose-up
 </span></span></code></pre></div><p>and wait for the images and the model to be downloaded, it might take some
 minutes.</p><h2 id=why-run-deepseek-locally>Why Run DeepSeek Locally?</h2><p>There might be few reasons why one would want to use a local assistan rather
 than using one of the many services available on the internet:</p><ul><li><em>privacy</em>: keep your conversations and data completely private and avoid
-sending sensitive information to external servers;</li><li><em>cost</em>: no API usage fees or rate limit, you can use it as much as you want;</li><li><em>offline access</em>: use the assistant even without an internet connection;</li><li><em>customization</em>: fine-tune and customize the model to your specific needs.</li></ul><h2 id=prerequisites>Prerequisites</h2><p>Please refer to the official documentations to install all the required tools:</p><ul><li><a href=https://docs.docker.com/get-started/get-docker/>docker</a>.</li></ul><p>You&rsquo;ll also need sufficient resources on the machine you&rsquo;re executing the model
+sending sensitive information to external servers;</li><li><em>cost</em>: no API usage fees or rate limit, you can use it as much as you want;</li><li><em>offline access</em>: use the assistant even without an internet connection;</li><li><em>customization</em>: fine-tune and customize the model to your specific needs.</li></ul><h2 id=prerequisites>Prerequisites</h2><p>Please refer to the official documentations to install all the required tools:</p><ul><li><a href=https://docs.docker.com/get-started/get-docker/ rel=external target=_blank>docker</a>.</li></ul><p>You&rsquo;ll also need sufficient resources on the machine you&rsquo;re executing the model
 on: LLM models can be resource-intensive. Ensure your machine has enough RAM (at
 least 16GB recommended, more for larger models) and disk space (depending on the
 model size).</p><p>DeepSeek offers various models, start with a smaller one if you&rsquo;re limited on
 resources. For the purpose of this tutorial we are using
-<a href=https://ollama.com/library/deepseek-r1:1.5b>deepseek-r1:1.5b</a>, which is relatively
+<a href=https://ollama.com/library/deepseek-r1:1.5b rel=external target=_blank>deepseek-r1:1.5b</a>, which is relatively
 performant and small, but other verions are available with different number of
 parameters.</p><p>You can find more models to test in the
-<a href=https://ollama.com/library>Ollama library</a>.</p><h2 id=limitations>Limitations</h2><p>A dedicated GPU would be highly recommended for reasonable performance, but
+<a href=https://ollama.com/library rel=external target=_blank>Ollama library</a>.</p><h2 id=limitations>Limitations</h2><p>A dedicated GPU would be highly recommended for reasonable performance, but
 unfortunately, according to the
-<a href=https://docs.docker.com/desktop/features/gpu/>docker official documentation</a>:</p><blockquote><p>Currently GPU support in Docker Desktop is only available on Windows with the
+<a href=https://docs.docker.com/desktop/features/gpu/ rel=external target=_blank>docker official documentation</a>:</p><blockquote><p>Currently GPU support in Docker Desktop is only available on Windows with the
 WSL2 backend.</p></blockquote><p>If you encounter memory or resource errors, try using a smaller model,
 increasing the resources allocated to Docker, or stopping other running
 containers.</p><h2 id=code>Code</h2><p>Here&rsquo;s the docker compose configuration to run all the needed components:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>services</span>:
@@ -63,21 +63,21 @@ containers.</p><h2 id=code>Code</h2><p>Here&rsquo;s the docker compose configura
 </span></span><span style=display:flex><span>      - <span style=color:#ae81ff>3000</span>:<span style=color:#ae81ff>3000</span>
 </span></span><span style=display:flex><span>    <span style=color:#f92672>depends_on</span>:
 </span></span><span style=display:flex><span>      - <span style=color:#ae81ff>ollama-init</span>
-</span></span></code></pre></div><p>The first service, <code>ollama</code>, is the <a href=https://ollama.com/>model manager</a>. For
+</span></span></code></pre></div><p>The first service, <code>ollama</code>, is the <a href=https://ollama.com/ rel=external target=_blank>model manager</a>. For
 this we need to attach a volume, <code>.ollama/data</code>, where the model(s) will be
 saved.</p><p><code>ollama-init</code> is a simple container that will simply use the
-<a href=https://github.com/ollama/ollama/blob/main/docs/api.md#pull-a-model>Ollama APIs</a>
+<a href=https://github.com/ollama/ollama/blob/main/docs/api.md#pull-a-model rel=external target=_blank>Ollama APIs</a>
 to request <code>ollama</code> service to download the required model. This container is
 not strictly required if you prefer to perform the downlaod manually separately,
 but just remember to save the file in <code>.ollama/data</code>, the model folder we
 mounted as volume in <code>ollama</code>.</p><p>To be able to ask question we can use the
-<a href=https://github.com/huggingface/chat-ui>chat web UI</a> provided by
-<a href=https://huggingface.co/chat>HuggingFace</a>, in the <code>chat-ui</code> service.</p><p>First thing we need here is to mount the folder where search data can be stored,
+<a href=https://github.com/huggingface/chat-ui rel=external target=_blank>chat web UI</a> provided by
+<a href=https://huggingface.co/chat rel=external target=_blank>HuggingFace</a>, in the <code>chat-ui</code> service.</p><p>First thing we need here is to mount the folder where search data can be stored,
 <code>./chat-ui/db</code>. Then we need to configure the models list, that only contains
 one for this tutorial. In particular we need to make sure to match the value in
 <code>ollamaName</code> to the model we download in <code>ollama-init</code>.</p><h2 id=access-chat-ui>Access Chat-UI</h2><p>You can start the services as per usual with:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>docker compose up -d
 </span></span></code></pre></div><p>Then you can open your web browser and go to
-<a href=http://localhost:3000>http://localhost:3000</a> and ask questions to your
+<a href=http://localhost:3000 rel=external target=_blank>http://localhost:3000</a> and ask questions to your
 personal assistant.</p><p>Note that depending on the hardware and the chosen model, it might take some
 time to provide an answer, so be patient ;).</p><h2 id=conclusion>Conclusion</h2><p>By setting up Ollama locally using Docker, you can experiment with the DeepSeek
 model without relying on cloud services. This approach offers control over
