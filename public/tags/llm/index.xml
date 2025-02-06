@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LLM on /dev/null</title><link>https://pasdam.github.io/tags/llm/</link><description>Recent content in LLM on /dev/null</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 01 Feb 2025 19:49:54 +0100</lastBuildDate><atom:link href="https://pasdam.github.io/tags/llm/index.xml" rel="self" type="application/rss+xml"/><item><title>Run your own private AI assistant locally with Chat-UI and Deepseek on Docker</title><link>https://pasdam.github.io/blog/posts/run_deepseek_model_locally/</link><pubDate>Sat, 01 Feb 2025 19:49:54 +0100</pubDate><guid>https://pasdam.github.io/blog/posts/run_deepseek_model_locally/</guid><description>&lt;p>Want to harness the power of
-&lt;a href="https://ollama.com/library/deepseek-r1:1.5b" rel="external"
- target="_blank" >Deepseek&lt;/a> LLM without relying on
-external APIs or worrying about data privacy? Running it locally is the answer!
-This guide will walk you through setting up all you need on your own machine
-using the user-friendly &lt;a href="https://github.com/huggingface/chat-ui" rel="external"
- target="_blank" >Chat UI&lt;/a> and
-the containerization magic of Docker. Get ready to chat with your very own
-private AI assistant!&lt;/p></description></item></channel></rss>
