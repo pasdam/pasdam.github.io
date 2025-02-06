@@ -6,16 +6,15 @@ tags:
   - Hugo
 title: Why I migrated my personal blog from GatsbyJS to Hugo
 ---
-Over the years my personal blog went through different iterations, using
-different stacks. When I started using [GatsbyJS](https://www.gatsbyjs.com/) I
-thought that would have been my last stack as I was initially very happy with
+Over the years my personal blog has undergone several iterations, each using a
+different tech stack. When I adopted [GatsbyJS](https://www.gatsbyjs.com/), I
+believed I had found my long-term solution as I was initially very happy with
 it: [React](https://react.dev/) is a very good and easy to use library to
 develop frontends, the Gatsby community is big, and there are plenty of
-resources or example about implementing common frontend features.
+resources or examples about implementing common frontend features.
 
-Unfortunately through the years I faced quite some challenges in maintaining the
-blog, given that the amount of time I was willing to spend on it was very
-limited and the (relatively) big effort required to keep the framework updated.
+However, maintaining the blog proved challenging over time. My limited available
+time clashed with the significant effort required to keep the framework updated.
 
 This is the journey that brought me to ditch GatsbyJS in favour of
 [Hugo](https://gohugo.io/).
@@ -24,25 +23,24 @@ This is the journey that brought me to ditch GatsbyJS in favour of
 
 ## A love-hate relationship with GatsbyJS
 
-Surprisingly, with Gatsby it was love at first sight. I initially thought it was
-a great way of creating a static website, such as the blog I wanted to develop:
-coming from other ecosystems, having a more organized development for
-HTML/JS/CSS components compared to the vanilla one was a breath of fresh air,
-and more in line with what I was used to.
+Surprisingly, with Gatsby it was love at first sight. It seemed like the perfect
+solution for building a static website like my blog. Coming from other
+ecosystems, I appreciated the structured approach to HTML/JS/CSS components
+compared to vanilla development.
 
-The first few months it was all good, once developed the main structure of the
-blog, adding content was super easy, the deployment was fast and the
-performances of the website were good.
+For the first few months, everything ran smoothly. Once the blog's core
+structure was in place, adding content was effortless, deployments were fast,
+and website performance was good.
 
-The **problems** started to arise like a year after the initial release of the
+The **problems** started to arise about a year after the initial release of the
 blog, when I decided to bump the version of the framework: I naively thought it
 would be just a matter of downloading the latest one, update all the
 dependencies, maybe update 1 or 2 things in the code and then I could go back on
-doing what actually mattered, posting content. **Boy I was wrong!**
+doing what actually mattered: posting content. **Boy, I was wrong!**
 
 First of all there were a number of breaking changes in the framework itself,
 which to a certain degree are to be expected, but these basically required me to
-rewrite big chunks of the code to adapt it to the latest framework version.
+rewrite big chunks of the blog code to adapt it to the latest version.
 
 In addition to that, updating all the other dependencies, and finding the
 right compatible versions with one another, while at the same time addressing
