@@ -44,12 +44,11 @@
   <!-- Code that all your templates share, like a header -->
   <div id="main">
     {{ block "main" . }}
-    <!-- The part of the page that begins to differ between templates -->
     {{ end }}
     {{ block "footer" . }}
+    {{ end }}
   </div>
-  <!-- More shared code, perhaps a footer but that can be overridden if need be in  -->
-  {{ end }}
+  {{ partial "footer.html" . }}
   {{ partial "scroll-to-top.html" . }}
 </body>
 

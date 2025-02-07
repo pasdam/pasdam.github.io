@@ -23,6 +23,23 @@ header a {
   color: white;
 }
 
+footer {
+  margin-bottom: 0;
+}
+
+footer > div {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+  max-width: 1280px;
+}
+
+footer > div p, footer > div a {
+  color: white;
+}
+
 body h1 {
   margin-left: 0;
   margin-right: 0;
