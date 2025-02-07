@@ -27,7 +27,7 @@
 {{- $name = . }}
 {{- end }}
 {{- end }}
-<li>
+<li title="{{ $name }}">
   <a {{- range $k, $v :=$attrs }} {{- with $v }} {{- printf " %s=%q" $k $v | safeHTMLAttr }} {{- end }} {{- end -}}>
     {{ .Pre }}
     {{- with .Params.iconClass }}
