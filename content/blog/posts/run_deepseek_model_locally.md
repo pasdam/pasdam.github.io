@@ -34,7 +34,7 @@ make compose-up
 and wait for the images and the model to be downloaded, it might take some
 minutes.
 
-## Why Run DeepSeek Locally?
+## Why run DeepSeek locally?
 
 There might be few reasons why one would want to use a local assistan rather
 than using one of the many services available on the internet:
