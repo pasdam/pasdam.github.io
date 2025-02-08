@@ -49,8 +49,8 @@ To check the installed version of Java on macOS:
 ```shell
 $ /usr/libexec/java_home -V
 Matching Java Virtual Machines (2):
-  11.0.2, x86_64:	"Java SE 11.0.2"	/Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home
-  1.8.0_181, x86_64:	"Java SE 8"	/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home
+  11.0.2,    x86_64:  "Java SE 11.0.2"  /Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home
+  1.8.0_181, x86_64:  "Java SE 8"       /Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home
 ````
 
 And to check the current active one:
@@ -69,11 +69,11 @@ Java(TM) SE Runtime Environment 18.9 (build 11.0.2+9-LTS)
 Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.2+9-LTS, mixed mode)
 ```
 
-To easily switch between the two sdk it's possible to [define aliases](https://github.com/pasdam/devbox-setup/blob/master/dotfiles/aliases/java):
+To easily switch between the two sdk it's possible to define aliases:
 
 ```shell
-j11='export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home; java -version'
-j8='export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home; java -version'
+alias j11='export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home; java -version'
+alias j8='export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home; java -version'
 ```
 
 so that it's possible to activate the required version with:
