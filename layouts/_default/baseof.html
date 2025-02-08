@@ -4,7 +4,9 @@
 <head>
   <meta charset="utf-8">
   <title>
-    {{ block "title" . }}{{ if not (eq .Title .Site.Title) }}{{ .Title }} &ndash; {{ end }}{{ .Site.Title }}{{ end }}
+    {{- block "title" . }}
+    {{ if not (eq .Title .Site.Title) }}{{ with .Title }}{{ . }} &ndash; {{ end }}{{ end }}{{ .Site.Title }}
+    {{- end }}
   </title>
   <link href="https://fonts.googleapis.com/css?family=Work+Sans:600|Quattrocento+Sans:400,400i,700" rel="stylesheet"
     type="text/css">
