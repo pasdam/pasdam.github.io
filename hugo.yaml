@@ -10,33 +10,40 @@ menus:
   - name: Blog
     pageRef: /blog/posts
     weight: 20
+  - name: Feed RSS
+    params:
+      target: _blank
+      iconClass: fa-solid fa-rss
+      iconOnly: true
+    url: https://pasdam.github.io/index.xml
+    weight: 30
   - name: GitHub
     params:
       target: _blank
       iconClass: fa-brands fa-github
       iconOnly: true
     url: https://github.com/pasdam
-    weight: 30
+    weight: 40
   - name: LinkedIn
     params:
       target: _blank
       iconClass: fa-brands fa-linkedin
       iconOnly: true
     url: https://www.linkedin.com/in/pasdam
-    weight: 40
+    weight: 50
   - name: Slack
     params:
       target: _blank
       iconClass: fa-brands fa-slack
       iconOnly: true
     url: https://pasdamworkspace.slack.com
-    weight: 50
+    weight: 60
   - name: e-mail
     params:
       iconClass: fa-solid fa-envelope
       iconOnly: true
     url: znvygb:st7bagk3q@erynl.sversbk.pbz # RTO13 encoded
-    weight: 60
+    weight: 70
 minify:
   minifyOutput: true
 params:
