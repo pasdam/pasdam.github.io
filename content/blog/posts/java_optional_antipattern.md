@@ -8,6 +8,7 @@ tags:
   - pattern
 title: The Optional anti-patterns in Java
 aliases:
+  - /blog/java_optional_antipattern/
   - /blog/optional_antipatterns_in_java/
 ---
 
