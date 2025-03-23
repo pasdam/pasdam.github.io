@@ -242,3 +242,21 @@ config is (here we are assuming is in the repo root, and it's called
 `inventory-config.yml`), configure the AWS credentials needed to pull the data,
 generate the inventory and then the diagram, which is then finally stored
 as artifact.
+
+## Conclusion
+
+Automating the generation of infrastructure diagrams with tools like
+`infra-inspector` offers significant advantages in terms of time savings,
+accuracy, and maintaining up-to-date documentation. By integrating this process
+into your CI/CD pipelines, you can ensure that your diagrams always reflect the
+current state of your AWS environment. This tutorial provides a practical
+introduction to using `infra-inspector`, but there's much more to explore,
+including advanced configuration options, support for additional AWS services,
+and further customization possibilities.
+
+To delve deeper into the capabilities of infra-inspector, explore its full
+feature set, and access the most up-to-date information, I encourage you to
+visit the official documentation at https://infra-inspector.github.io/. There
+you'll find comprehensive documentation, detailed configuration guides, and
+potentially more advanced use cases to further enhance your infrastructure
+visualization and documentation efforts.
