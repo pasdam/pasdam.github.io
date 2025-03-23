@@ -27,7 +27,7 @@ footer {
   margin-bottom: 0;
 }
 
-footer > div {
+footer>div {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
@@ -36,7 +36,8 @@ footer > div {
   max-width: 1280px;
 }
 
-footer > div p, footer > div a {
+footer>div p,
+footer>div a {
   color: white;
 }
 
@@ -356,7 +357,7 @@ hr {
   width: 4rem;
 }
 
-#to-top-button > svg {
+#to-top-button>svg {
   --tw-drop-shadow: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
   border-radius: 9999px;
   border-width: 0px;
@@ -445,7 +446,8 @@ hr {
   margin: 0;
 }
 
-p > code {
+li>code,
+p>code {
   background-color: rgba(27, 31, 35, 10%);
   padding: .2em;
 }
@@ -509,7 +511,7 @@ nav#TableOfContents li a:before {
   }
 }
 
-#mega-menu > ul {
+#mega-menu>ul {
   display: flex;
   flex-direction: column;
   font-weight: 500;
@@ -524,7 +526,7 @@ nav#TableOfContents li a:before {
   }
 }
 
-#mega-menu > ul > li {
+#mega-menu>ul>li {
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-color: #F3F4F6;
@@ -539,11 +541,11 @@ nav#TableOfContents li a:before {
   }
 }
 
-#mega-menu > ul > li:hover {
+#mega-menu>ul>li:hover {
   border-bottom-width: 1px;
 }
 
-#mega-menu > ul > :not([hidden])~ :not([hidden]) {
+#mega-menu>ul> :not([hidden])~ :not([hidden]) {
   @media (min-width: 768px) {
     --tw-space-x-reverse: 0;
     margin-right: calc(2rem * var(--tw-space-x-reverse));
@@ -591,7 +593,7 @@ nav#TableOfContents li a:before {
 }
 
 #page-header {
-  > nav {
+  >nav {
     align-items: center;
     display: flex;
     flex-wrap: wrap;
