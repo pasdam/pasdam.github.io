@@ -14,8 +14,9 @@ title: Automatically generate diagrams from resources deployed in AWS
 
 Navigating through all the services in the AWS console is cumbersome, and
 generating diagrams manually and keep them updated is a tedious job.
-`infra-inspector` automates these processes, so you can use it in CI/CD
-environments to automatically or periodically generate these useful info.
+[infra-inspector](https://infra-inspector.github.io/) automates these processes,
+so you can use it in CI/CD environments to automatically or periodically
+generate these useful info.
 
 <!--more-->
 
@@ -173,8 +174,9 @@ docker run --rm \
 ```
 
 If you need to override some details about the infrastructure (ie. to clarify
-some resource names, you can edit the inventory YAML file before running the
-last command).
+some resource names), you can either edit the inventory YAML file before running
+the last command, or create a separate inventory containing only the
+[overriding values](https://infra-inspector.github.io/guides/properties_override/).
 
 The output can then be opened in [Draw.io](https://www.drawio.com/), which can
 be used from the CLI as well, in case you need to export the diagram as image.
