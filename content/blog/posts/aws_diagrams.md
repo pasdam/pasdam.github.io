@@ -48,7 +48,7 @@ awsAccounts:
           transitGatewayEnabled: true
 ```
 
-For each account you can specify one or more reagions, and for each of those you
+For each account you can specify one or more regions, and for each of those you
 can enable the services to enable. Refer to the
 [official documentation](https://infra-inspector.github.io/reference/configuration/inventory/)
 for more info.
@@ -187,7 +187,7 @@ With the inventory above you should get this diagram:
 
 ### Use in CI pipelines
 
-The above commangs can be used in a CI/CD environment as well to automate the
+The above commands can be used in a CI/CD environment as well to automate the
 process, like for instance update the inventory and the diagram every time the
 infrastructure is updated, or at specified interval, like once a day.
 
@@ -235,7 +235,7 @@ jobs:
 ```
 
 Here the job `infra-inspector` will run only after `infra-deployment` has been
-succesfully completed, and it will checkout the repository where the inventory
+successfully completed, and it will checkout the repository where the inventory
 config is (here we are assuming is in the repo root, and it's called
 `inventory-config.yml`), configure the AWS credentials needed to pull the data,
 generate the inventory and then the diagram, which is then finally stored
