@@ -31,7 +31,7 @@ environments to automatically or periodically generate these useful info.
 
 ### Generate the inventory
 
-First think you need to create a configuration to tell the CLI tool which
+First thing you need to create a configuration to tell the CLI tool which
 resources in which region to catalog. Create a file called
 `inventory-config.yml` with the following content:
 
