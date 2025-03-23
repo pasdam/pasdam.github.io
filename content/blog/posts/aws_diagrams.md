@@ -254,7 +254,7 @@ introduction to using `infra-inspector`, but there's much more to explore,
 including advanced configuration options, support for additional AWS services,
 and further customization possibilities.
 
-To delve deeper into the capabilities of infra-inspector, explore its full
+To delve deeper into the capabilities of `infra-inspector`, explore its full
 feature set, and access the most up-to-date information, I encourage you to
 visit the official documentation at https://infra-inspector.github.io/. There
 you'll find comprehensive documentation, detailed configuration guides, and
