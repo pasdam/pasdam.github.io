@@ -1,5 +1,7 @@
 html {
   font: 125%/1.45 'Quattrocento Sans', sans-serif;
+  min-height: 100%;
+  position: relative;
 }
 
 body {
@@ -10,7 +12,7 @@ body {
   font-feature-settings: "kern", "liga", "clig", "calt";
   font-kerning: normal;
   font-weight: 400;
-  margin: 0;
+  margin: 0 0 80px;
   word-wrap: break-word;
 }
 
@@ -24,7 +26,11 @@ header a {
 }
 
 footer {
+  bottom: 0;
+  left: 0;
   margin-bottom: 0;
+  position: absolute;
+  width: 100%;
 }
 
 footer>div {
