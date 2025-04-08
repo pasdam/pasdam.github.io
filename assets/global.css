@@ -517,6 +517,12 @@ nav#TableOfContents li a:before {
   }
 }
 
+#mega-menu .small-screen-only {
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
 #mega-menu>ul {
   display: flex;
   flex-direction: column;

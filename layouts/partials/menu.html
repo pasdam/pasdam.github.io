@@ -39,9 +39,7 @@
     {{- with .Params.iconClass }}
     <i class="{{ . }}"></i>
     {{- end }}
-    {{- if not .Params.iconOnly }}
-    <span>{{ $name }}</span>
-    {{- end }}
+    <span{{ if .Params.iconOnly }} class="small-screen-only"{{ end }}>{{ $name }}</span>
     {{ .Post }}
   </a>
   {{- with .Children }}
