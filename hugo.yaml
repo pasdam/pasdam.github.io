@@ -38,12 +38,18 @@ menus:
       iconOnly: true
     url: https://pasdamworkspace.slack.com
     weight: 60
-  - name: e-mail
+  - name: E-mail
     params:
       iconClass: fa-solid fa-envelope
       iconOnly: true
     url: znvygb:st7bagk3q@erynl.sversbk.pbz # RTO13 encoded
     weight: 70
+  - name: Search terms
+    params:
+      iconClass: fa-solid fa-solid fa-magnifying-glass
+      iconOnly: true
+    url: /search
+    weight: 80
 minify:
   minifyOutput: true
 params:
