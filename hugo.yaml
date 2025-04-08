@@ -4,9 +4,18 @@ enableRobotsTXT: true
 languageCode: en-us
 menus:
   main:
+  - name: Home
+    pageRef: /
+    weight: 10
+    params:
+      iconClass: fa-solid fa-house
+      iconOnly: true
   - name: Blog
     pageRef: /blog/posts
     weight: 20
+    params:
+      iconClass: fa-solid fa-blog
+      iconOnly: true
   - name: Feed RSS
     params:
       target: _blank
