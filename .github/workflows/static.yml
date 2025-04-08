@@ -34,6 +34,9 @@ jobs:
       - name: Build
         run: hugo --minify
 
+      - name: Index pages
+        run: npx -y pagefind --site public
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 

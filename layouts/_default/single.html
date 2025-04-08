@@ -4,8 +4,8 @@
 {{ end }}
 
 {{ define "main" }}
-<article class="post-body">
-  <h1 class="text-green">{{ .Title }}</h1>
+<article class="post-body" data-pagefind-body>
+  <h1 class="text-green" data-pagefind-meta="title">{{ .Title }}</h1>
   {{ partial "date-and-time-to-read.html" . }}
   {{ with .GetTerms "tags" }}
   <div class="tags">
