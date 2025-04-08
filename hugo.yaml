@@ -4,9 +4,6 @@ enableRobotsTXT: true
 languageCode: en-us
 menus:
   main:
-  - name: Home
-    pageRef: /
-    weight: 10
   - name: Blog
     pageRef: /blog/posts
     weight: 20
