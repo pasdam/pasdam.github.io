@@ -24,8 +24,8 @@ computing, programming, and artificial intelligence.
 
 * [awesome-resume](https://pasdam.github.io/awesome-resume/): online resume
   builder;
-* [aws-inspector](https://aws-inspector.github.io/): command line application to
-  generate architecture diagrams for AWS resources;
+* [infra-inspector](https://infra-inspector.github.io/): command line
+  application to generate architecture diagrams for AWS resources;
 * [go-scaffold](https://github.com/go-scaffold/go-scaffold): command line
   application that generates files/projects from a template;
 * [grpcExample](https://github.com/pasdam/grpcExample): demo of a service
@@ -37,3 +37,14 @@ computing, programming, and artificial intelligence.
   mocking of Go functions/methods easy;
 * [template-go-project](https://github.com/pasdam/template-go-project): template
   of a go app.
+
+## Open-source project I contributed to
+
+* [keepassxc](https://github.com/keepassxreboot/keepassxc): cross-platform
+  community-driven port of the Windows application “Keepass Password Safe”;
+* [go-echarts](https://github.com/go-echarts/go-echarts): charting library for
+  Golang;
+* [dataframe-go](https://github.com/rocketlaunchr/dataframe-go): DataFrames for
+  Golang;
+* [fluid](https://github.com/lirios/fluid): library for QtQuick apps with
+  Material Design.
